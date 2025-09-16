@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.footer-component{
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #FFF;
+}
+#school-footer-part{
+    background-color: #32A5E4;
+}
+#devclub-footer-part{
+    background-color: #3255A4;
+}
+.footer-text-p{
+    margin: 0;
+}
