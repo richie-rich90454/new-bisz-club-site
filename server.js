@@ -10,7 +10,7 @@ fastify.register(require("@fastify/static"),{
     immutable: false
 });
 fastify.setNotFoundHandler((request, reply)=>{
-    reply.code(404).type("text/plain").send("404 Not Found");
+    reply.sendFile("error.html");
 });
 fastify.setErrorHandler((error, request, reply)=>{
     request.log.error(error);
