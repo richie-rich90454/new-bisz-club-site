@@ -1,3 +1,21 @@
+@font-face{
+    font-family: "Noto Sans SC";
+    src: url("https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@100..900") format("truetype-variations"), url("fonts/NotoSansSC-VariableFont_wght.ttf") format("truetype-variations");
+    font-display: swap;
+    font-weight: 1 1000;
+}
+@font-face{
+  font-family: "EB Garamond";
+  src: url("https://fonts.loli.net/css2?family=EB+Garamond:wdth,wght@100..900,200..900") format("truetype-variations"), url("fonts/EBGaramond-VariableFont_wght.ttf") format("truetype-variations");
+  font-display: swap;
+  font-weight: 1 1000;
+}
+@font-face{
+  font-family: "EB Garamond Italic";
+  src: url("https://fonts.loli.net/css2?family=EB+Garamond:ital,wght@0,100..900;1,100..900") format("truetype-variations"), url("fonts/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-display: swap;
+  font-weight: 1 1000;
+}
 body{
     margin: 0;
     padding: 0;
