@@ -16,23 +16,154 @@
   font-display: swap;
   font-weight: 1 1000;
 }
+
+:root{
+    --primary-color: #3255A4;
+    --secondary-color: #DE0000;
+    --tertiary-color: #32A5E4;
+    --background-color: #FFF;
+    --background-secondary: #E4E4E4;
+    --text-color: #000;
+    --heading-text-color: #FFF;
+    --highlight-color: #FFF5B1;
+    --light-gray: #F8F8F8;
+    --border-radius: 16px;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scroll-padding-top: 2rem;
+    height: 100%;
+}
+
 body{
+    font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background-color);
+    line-height: 1.6;
+    color: var(--text-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+/* 404 Error Page Styles */
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 177px;
+    max-width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 1;
+}
+
+.row:before, .row:after{
+    display: table;
+    content: " ";
+}
+
+.col-md-6{
+    width: 50%;
+}
+
+.col-md-push-3{
+    margin-left: 25%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1{
+    font-size: 48px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+    color: var(--primary-color);
+    font-family: "EB Garamond", serif;
+}
+
+.lead{
+    font-size: 21px;
+    font-weight: 200;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+p{
+    margin: 0 0 10px;
+}
+
+a{
+    color: var(--tertiary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Footer Styles */
 .footer-component{
+    font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     text-align: center;
     margin: 0;
-    padding: 1rem;
+    padding: .1rem;
     font-size: 1rem;
-    color: #FFF;
+    color: var(--background-color);
+    font-size: .8rem;
 }
+
+#footer-clubs-at-p{
+    border-bottom: .1rem solid var(--background-color);
+    width: 45%;
+    text-align: center;
+    margin: auto;
+}
+
 #school-footer-part{
-    background-color: #32A5E4;
+    background-color: var(--tertiary-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
+
 #devclub-footer-part{
-    background-color: #3255A4;
+    background-color: var(--primary-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
+
 .footer-text-p{
     margin: 0;
+    padding: 0.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 100px;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .lead {
+        font-size: 18px;
+    }
+    
+    .col-md-6 {
+        width: 100%;
+    }
+    
+    .col-md-push-3 {
+        margin-left: 0;
+    }
 }
