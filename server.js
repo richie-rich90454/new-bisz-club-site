@@ -1,28 +1,16 @@
 let path=require("path");
-let fs=require("fs");
 let fastify=require("fastify")({logger: false});
 let PORT=8080;
 let publicDir=path.join(__dirname, "public");
-let clubsJsonPath=path.join(__dirname, "clubs.json");
 fastify.register(require("@fastify/static"),{
     root: publicDir,
-    prefix: "/public/",
+    prefix: "/",
     cacheControl: false,
     maxAge: 0,
     immutable: false
 });
-fastify.get("/api/clubs", async (request, reply)=>{
-    try{
-        let data=await fs.promises.readFile(clubsJsonPath, "utf8");
-        let json=JSON.parse(data);
-        reply.send(json);
-    }
-    catch (err){
-        reply.code(500).send({ error: "Failed to load clubs data" });
-    }
-});
 fastify.setNotFoundHandler((request, reply)=>{
-    reply.sendFile("error.html");
+    reply.code(404).type("text/plain").send("404 Not Found");
 });
 fastify.setErrorHandler((error, request, reply)=>{
     request.log.error(error);
@@ -30,7 +18,7 @@ fastify.setErrorHandler((error, request, reply)=>{
 });
 let start=async()=>{
     try{
-        await fastify.listen({port: PORT, host: "::"});//Guys just for explanation, "::" refers to all subjects in both IPv4 and IPv6 and is basically a 0.0.0.0 for dual stack
+        await fastify.listen({port: PORT, host: "::"});
         console.log(`Server running at http://localhost:${PORT}`);
     }
     catch (err){
