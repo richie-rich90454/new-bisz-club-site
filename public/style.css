@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face{
     font-family: "Noto Sans SC";
     src: url("https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@100..900") format("truetype-variations"), url("fonts/NotoSansSC-VariableFont_wght.ttf") format("truetype-variations");
@@ -5,18 +6,18 @@
     font-weight: 1 1000;
 }
 @font-face{
-  font-family: "EB Garamond";
-  src: url("https://fonts.loli.net/css2?family=EB+Garamond:wdth,wght@100..900,200..900") format("truetype-variations"), url("fonts/EBGaramond-VariableFont_wght.ttf") format("truetype-variations");
-  font-display: swap;
-  font-weight: 1 1000;
+    font-family: "EB Garamond";
+    src: url("https://fonts.loli.net/css2?family=EB+Garamond:wdth,wght@100..900,200..900") format("truetype-variations"), url("fonts/EBGaramond-VariableFont_wght.ttf") format("truetype-variations");
+    font-display: swap;
+    font-weight: 1 1000;
 }
 @font-face{
-  font-family: "EB Garamond Italic";
-  src: url("https://fonts.loli.net/css2?family=EB+Garamond:ital,wght@0,100..900;1,100..900") format("truetype-variations"), url("fonts/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype-variations");
-  font-display: swap;
-  font-weight: 1 1000;
+    font-family: "EB Garamond Italic";
+    src: url("https://fonts.loli.net/css2?family=EB+Garamond:ital,wght@0,100..900;1,100..900") format("truetype-variations"), url("fonts/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype-variations");
+    font-display: swap;
+    font-weight: 1 1000;
 }
-
+/* Root Variables */
 :root{
     --primary-color: #3255A4;
     --secondary-color: #DE0000;
@@ -27,143 +28,187 @@
     --heading-text-color: #FFF;
     --highlight-color: #FFF5B1;
     --light-gray: #F8F8F8;
-    --border-radius: 16px;
+    --background-color-dark: #1E1E1E;
+    --background-secondary-dark: #2A2A2A;
+    --text-color-dark: #EAEAEA;
+    --primary-color-dark: #3A6073;
+    --light-gray-dark: #2A2A2A;
+    --heading-text-color-dark: #FFF;
+    --border-radius: 8px;
+    --sidebar-width: 280px;
+    --shadow-light: 0 2px 5px rgba(0, 0, 0, .1);
+    --shadow-medium: 0 8px 24px rgba(0, 0, 0, .12);
+    scrollbar-gutter: stable;
 }
-
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark){
+    :root{
+        --background-color: var(--background-color-dark);
+        --background-secondary: var(--background-secondary-dark);
+        --text-color: var(--text-color-dark);
+        --primary-color: var(--primary-color-dark);
+        --light-gray: var(--light-gray-dark);
+        --heading-text-color: var(--heading-text-color-dark);
+    }
+}
+/* Global Styles */
+*, ::before, ::after{
+    box-sizing: border-box;
+}
 html{
     scroll-behavior: smooth;
     overflow-y: scroll;
-    scroll-padding-top: 2rem;
     height: 100%;
 }
-
 body{
     font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--background-color);
-    line-height: 1.6;
     color: var(--text-color);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
-
-/* 404 Error Page Styles */
-.container{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 177px;
-    max-width: 1170px;
-    padding-right: 15px;
-    padding-left: 15px;
-    flex: 1;
-}
-
-.row:before, .row:after{
-    display: table;
-    content: " ";
-}
-
-.col-md-6{
-    width: 50%;
-}
-
-.col-md-push-3{
-    margin-left: 25%;
-}
-
-.text-center {
-    text-align: center;
-}
-
-h1{
-    font-size: 48px;
-    font-weight: 300;
-    margin: 0 0 20px 0;
-    color: var(--primary-color);
-    font-family: "EB Garamond", serif;
-}
-
-.lead{
-    font-size: 21px;
-    font-weight: 200;
-    margin-bottom: 20px;
+h1, h2, h3, h4, h5, h6{
+    font-family: "Noto Sans", sans-serif;
     color: var(--text-color);
 }
-
 p{
-    margin: 0 0 10px;
+    font-family: "EB Garamond", serif;
 }
-
-a{
-    color: var(--tertiary-color);
+/* Layout */
+#container{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+#sidebar{
+    width: var(--sidebar-width);
+    background-color: var(--background-secondary);
+    box-shadow: var(--shadow-medium);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+#main{
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    background-color: var(--background-color);
+    transition: margin-left 0.3s ease;
+}
+/* Navigation */
+.nav-ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.nav-li{
+    margin: 0;
+}
+.nav-link{
+    display: block;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--text-color);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease-in-out;
 }
-
-a:hover{
-    color: var(--primary-color);
-    text-decoration: underline;
+.nav-link:hover{
+    color: var(--secondary-color);
+    background-color: rgba(222, 0, 0, 0.08);
+    transform: translateX(4px);
 }
-
-/* Footer Styles */
-.footer-component{
-    font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+.nav-link:focus{
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+/* Mobile Sidebar */
+#mobile-side-control{
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+}
+#mobile-side-control span{
+    background: var(--text-color);
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+#mobile-side-control span:nth-child(1){top: 0;}
+#mobile-side-control span:nth-child(2){top: 9px;}
+#mobile-side-control span:nth-child(3){top: 18px;}
+#mobile-side-control.active span:nth-child(1){
+    transform: rotate(45deg);
+    top: 9px;
+}
+#mobile-side-control.active span:nth-child(2){
+    opacity: 0;
+}
+#mobile-side-control.active span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 9px;
+}
+/* Headings */
+h1{
+    font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
-    margin: 0;
-    padding: .1rem;
+    color: var(--heading-text-color);
+    background: var(--primary-color);
+    padding: 1rem;
+    margin: 0 0 1rem;
+    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 8px rgba(0, 0, 0, 0.4);
+}
+/* Footer */
+#footer{
+    text-align: right;
+    padding: 1rem;
     font-size: 1rem;
-    color: var(--background-color);
-    font-size: .8rem;
+    color: var(--text-color);
 }
-
-#footer-clubs-at-p{
-    border-bottom: .1rem solid var(--background-color);
-    width: 45%;
-    text-align: center;
-    margin: auto;
-}
-
-#school-footer-part{
-    background-color: var(--tertiary-color);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-}
-
-#devclub-footer-part{
-    background-color: var(--primary-color);
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-}
-
-.footer-text-p{
-    margin: 0;
-    padding: 0.2rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        margin-top: 100px;
-        padding: 20px;
+/* Responsive */
+@media (max-width: 900px){
+    #sidebar{
+        transform: translateX(-100%);
     }
-    
-    h1 {
-        font-size: 36px;
+    #sidebar.active{
+        transform: translateX(0);
     }
-    
-    .lead {
-        font-size: 18px;
+    #mobile-side-control{
+        display: block;
     }
-    
-    .col-md-6 {
-        width: 100%;
-    }
-    
-    .col-md-push-3 {
+    #main{
         margin-left: 0;
+        padding-top: 4rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 480px){
+    .nav-link{
+        font-size: 1rem;
+        padding: 0.5rem;
     }
 }
