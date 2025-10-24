@@ -1,11 +1,42 @@
-{
-    "clubName": "Developers' Club",
-    "clubType": "CS/ICT/Technology",
-    "clubStudentLeader": "Harry Liu, Eric Wong",
-    "clubAdvisor": "Michael Davison, Cindy Cheng",
-    "time": "Monday 4:30-5:30 PM",
-    "cost": "N/A",
-    "grades": "G8-G12",
-    "description": "Blending almost every programming aspect and imagination, the Developers' Club is the perfect place for all Computer Science enthusiasts, regardless of whether you are a geek or a nerd. Here is the place to imagine and create everything you dream of. Students will not only develop technical skills such as Python, C++, Java, or JS that can be applied to the real world, but they will also be able to work on projects in groups to develop cooperation, communication, and teamwork skills.",
-    "imageSources": ""
-}
+[
+    {
+        "clubName": "Developers' Club",
+        "clubID": "cs.developers",
+        "clubStudentLeader": "Harry Liu, Eric Wong",
+        "clubAdvisor": "Michael Davison, Cindy Cheng",
+        "time": "Monday 4:30-5:30 PM",
+        "cost": "N/A",
+        "grades": "G8-G12",
+        "description": "Blending almost every programming aspect and imagination, the Developers' Club is the perfect place for all Computer Science enthusiasts, regardless of whether you are a geek or a nerd. Here is the place to imagine and create everything you dream of. Students will not only develop technical skills such as Python, C++, Java, or JS that can be applied to the real world, but they will also be able to work on projects in groups to develop cooperation, communication, and teamwork skills."
+    },
+    {
+        "clubName": "BISZ TV Station",
+        "clubID": "arts.btv",
+        "clubStudentLeader": "Howard Yang, Linnea Cheng",
+        "clubAdvisor": "Stephan Brown",
+        "time": "Friday 4:30-5:30PM",
+        "cost": "200CNY/Student/Year",
+        "grades": "G9-G12",
+        "description": "Student-run and bursting with energy, BlSZ TV is the platform for non-academic interests. We craft videos, podcasts, and event coverage, turning classrooms into studios and ideas into screen-ready spectacles. We immortalize campus life, transforming fleeting moments into shared memories that fuel school pride. By spotlighting diverse voices, we unite the community—teachers as mentors, students as visionaries—and amplify school spirit into a roaring force. Beyond a station—this is where stories come alive, where students build community and make history. Join us and shape our school's story. Not just a club. A movement."
+    },
+    {
+        "clubName": "Multicultural Calligraphy & Arts Club",
+        "clubID": "arts.chinese_calligraphy",
+        "clubStudentLeader": "Honsum Xu, Alina Zhong",
+        "clubAdvisor": "Kathy Zhang",
+        "time": "Tuesday 4:30-5:30PM",
+        "cost": "200CNY/Student/Year",
+        "grades": "G9-G12",
+        "description": "The Multicultural Calligraphy & Arts Club centers on Chinese calligraphy, combined with traditional and modern art forms such as traditional Chinese painting, watercolor, 2D, and 3D art. We also incorporate innovative forms like digital painting, installation, and video art. Our goal is to learn and share art cultures from both the East and West. By blending diverse artistic expressions, we aim to both promote and preserve traditional Chinese culture. This club welcomes all students interested in calligraphy and various art forms to explore creative possibilities and enhance cross-cultural understanding and innovation."
+    },
+    {
+        "clubName": "Model United Nations",
+        "clubID": "academic.mun",
+        "clubStudentLeader": "Emma Lin",
+        "clubAdvisor": "Kyle D Pulsifer",
+        "time": "Wednesday 4:30-5:30PM",
+        "cost": "N/A",
+        "grades": "G9-G12",
+        "description": "Looking for a competition to go on your college application? Novice friendly and enjoyable conferences? Supportive community? MUN has got you. We offer training, preparation and guidance for delegates as we will take to you regional, national, hopefully someday international conferences to enhance your WRITING AND RESEARCH capabilities, PUBLIC SPEAKING skills, DEBATE and persuasion, LEADERSHIP abilities, SOCIALIZATION skills and CRITICAL THINKING all through fun methods! In addition, We travel domestically for tournaments, offering opportunities to compete in Shanghai and Beijing with delegates from over multiple nations!"
+    }
+]

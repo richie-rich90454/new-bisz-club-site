@@ -1,5 +1,5 @@
 {
-  "name": "newbiszclubsite",
+  "name": "new-bisz-club-site",
   "version": "1.0.0",
   "description": "The new BISZ club site available at new.biszweb.club\\\r Take note, this tertiary domain is still not deployed, and the old site is still present via www.biszweb.club \\\r However, after the basic structure is done, this would be moved to www.biszweb.club and the old one would be relocated at old.biszweb.club and eventually deprecated.",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "richie-rich90454",
   "license": "ISC",
   "dependencies": {
     "@fastify/static": "^8.2.0",
