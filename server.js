@@ -1,13 +1,37 @@
 let path=require("path");
-let fastify=require("fastify")({logger: false});
+let fs=require("fs");
+let fastify=require("fastify")({ logger: false });
+let fastifyStatic=require("@fastify/static");
+let fastifyCors=require("@fastify/cors");
 let PORT=8080;
 let publicDir=path.join(__dirname, "public");
-fastify.register(require("@fastify/static"),{
+fastify.register(fastifyCors,{
+    origin: "*",
+});
+fastify.register(fastifyStatic,{
     root: publicDir,
     prefix: "/",
     cacheControl: false,
     maxAge: 0,
-    immutable: false
+    immutable: false,
+});
+fastify.get("/images.json/*", async (request, reply)=>{
+    try{
+        const urlPath=request.params["*"];
+        const folderPath=path.join(publicDir, urlPath);
+        if (!fs.existsSync(folderPath)){
+            return reply.code(404).send({ error: "Folder not found" });
+        }
+        const files=fs
+            .readdirSync(folderPath)
+            .filter(file=>/\.(jpe?g|png|webp)$/i.test(file));
+
+        reply.type("application/json").send(files);
+    }
+    catch (err){
+        console.error("Error listing images:", err);
+        reply.code(500).send({ error: "Server error" });
+    }
 });
 fastify.setNotFoundHandler((request, reply)=>{
     reply.code(404).type("text/plain").send("404 Not Found");
