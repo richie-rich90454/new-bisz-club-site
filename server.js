@@ -17,15 +17,12 @@ fastify.register(fastifyStatic,{
 });
 fastify.get("/images.json/*", async (request, reply)=>{
     try{
-        const urlPath=request.params["*"];
-        const folderPath=path.join(publicDir, urlPath);
+        let urlPath=request.params["*"];
+        let folderPath=path.join(publicDir, urlPath);
         if (!fs.existsSync(folderPath)){
-            return reply.code(404).send({ error: "Folder not found" });
+            return reply.code(404).send({error: "Folder not found"});
         }
-        const files=fs
-            .readdirSync(folderPath)
-            .filter(file=>/\.(jpe?g|png|webp)$/i.test(file));
-
+        let files=fs.readdirSync(folderPath).filter(file=>/\.(jpe?g|png|webp)$/i.test(file));
         reply.type("application/json").send(files);
     }
     catch (err){
@@ -34,7 +31,13 @@ fastify.get("/images.json/*", async (request, reply)=>{
     }
 });
 fastify.setNotFoundHandler((request, reply)=>{
-    reply.code(404).type("text/plain").send("404 Not Found");
+    let errorPagePath = path.join(publicDir, "error.html");
+    if (fs.existsSync(errorPagePath)){
+        reply.code(404).type("text/html").sendFile("error.html");
+    }
+    else{
+        reply.code(404).type("text/plain").send("404 Not Found");
+    }
 });
 fastify.setErrorHandler((error, request, reply)=>{
     request.log.error(error);

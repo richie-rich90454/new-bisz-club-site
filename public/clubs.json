@@ -4,7 +4,7 @@
         "clubID": "cs.developers",
         "clubStudentLeader": "Harry Liu, Eric Wong",
         "clubAdvisor": "Michael Davison, Cindy Cheng",
-        "time": "Monday 4:30-5:30 PM",
+        "time": "Monday 4:30-5:30PM",
         "cost": "N/A",
         "grades": "G8-G12",
         "description": "Blending almost every programming aspect and imagination, the Developers' Club is the perfect place for all Computer Science enthusiasts, regardless of whether you are a geek or a nerd. Here is the place to imagine and create everything you dream of. Students will not only develop technical skills such as Python, C++, Java, or JS that can be applied to the real world, but they will also be able to work on projects in groups to develop cooperation, communication, and teamwork skills."
@@ -38,5 +38,25 @@
         "cost": "N/A",
         "grades": "G9-G12",
         "description": "Looking for a competition to go on your college application? Novice friendly and enjoyable conferences? Supportive community? MUN has got you. We offer training, preparation and guidance for delegates as we will take to you regional, national, hopefully someday international conferences to enhance your WRITING AND RESEARCH capabilities, PUBLIC SPEAKING skills, DEBATE and persuasion, LEADERSHIP abilities, SOCIALIZATION skills and CRITICAL THINKING all through fun methods! In addition, We travel domestically for tournaments, offering opportunities to compete in Shanghai and Beijing with delegates from over multiple nations!"
+    },
+    {
+        "clubName": "Chinese Literary Creative Writing Club",
+        "clubID": "academic.chinese_writing",
+        "clubStudentLeader": "N/A",
+        "clubAdvisor": "Grace Zhang",
+        "time": "Monday 3:30-4:30PM",
+        "cost": "N/A",
+        "grades": "G6-G8",
+        "description": "We aim to create a vibrant community for literature enthusiasts where enables everyone to experience and grow in Chinese writing. Excellent works will have the hope of being recommended for publication in \"Shibei\". "
+    },
+    {
+        "clubName": "Barracuda Chess Club",
+        "clubID": "sports.chess",
+        "clubStudentLeader": "Howard You",
+        "clubAdvisor": "Stephan Sosa",
+        "time": "Tuesday 3:30-4:30PM",
+        "cost": "N/A",
+        "grades": "G6-G8",
+        "description": "Chess is a global sport that combines science, culture, literature, competition, and intellect. Chess also holds a prominent place in the campus culture of top U.S. universities such as Harvard, MIT, and Stanford. Learning chess offers remarkable benefits: Improved Thinking Ability (Enhancing logical reasoning and strategic planning), Enhanced Learning Abilities (Enhancing focus and memory retention), Greater Mental Resilience (Cultivating better emotional control and stress management), Improved Social Interaction (Cultivating respect and communication through competition). Little Barracuda Chess Club is now open to all chess enthusiasts! We aim to build a supportive, fun, and educational community where players of all levels can grow and enjoy the game together. We will actively participate in various chess competitions. Join us and discover the joy of chess!"
     }
 ]
