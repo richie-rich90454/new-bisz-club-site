@@ -29,7 +29,7 @@ export async function renderClubs(pageName="", containerSelector=".main-section"
             };
             imagesContainer.appendChild(img);
         });
-        div.innerHTML=`<h2>${club.clubName}</h2><p><strong>Advisor:</strong> ${club.clubAdvisor}</p><p><strong>Student Leaders:</strong> ${club.clubStudentLeader}</p><p><strong>Grades:</strong> ${club.grades}</p><p><strong>Time:</strong> ${club.time}</p><p><strong>Cost:</strong> ${club.cost}</p><p>${club.description}</p>
+        div.innerHTML=`<h2>${club.clubName}</h2><p><strong>Advisor:</strong> ${club.clubAdvisor}</p><p><strong>Student Leaders:</strong> ${club.clubStudentLeader}</p><p><strong>Grades:</strong> ${club.grades}</p><p><strong>Time:</strong> ${club.time}</p><p><strong>Cost:</strong> ${club.cost}</p><p><strong>Description:</strong> ${club.description}</p>
         `;
         div.appendChild(imagesContainer);
         mainSection.appendChild(div);

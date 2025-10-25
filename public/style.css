@@ -19,19 +19,20 @@
 }
 /* Root Variables */
 :root{
-    --primary-color: #3255A4;
-    --secondary-color: #DE0000;
-    --tertiary-color: #32A5E4;
+    --primary-color: #012583;
+    --secondary-color: #3255A4;
+    --tertiary-color: #8D8D8D;
     --background-color: #FFF;
-    --background-secondary: #E4E4E4;
+    --background-secondary: #CACACA;
     --text-color: #000;
     --heading-text-color: #FFF;
-    --highlight-color: #FFF5B1;
-    --light-gray: #F8F8F8;
-    --background-color-dark: #1E1E1E;
+    --highlight-color: #D91A4A;
+    --highlight-color-dark: #FFD700;
+    --light-gray: #FAFAFA;
+    --background-color-dark: #303030;
     --background-secondary-dark: #2A2A2A;
     --text-color-dark: #EAEAEA;
-    --primary-color-dark: #3A6073;
+    --primary-color-dark: #0337BD;
     --light-gray-dark: #2A2A2A;
     --heading-text-color-dark: #FFF;
     --border-radius: 8px;
@@ -49,6 +50,7 @@
         --primary-color: var(--primary-color-dark);
         --light-gray: var(--light-gray-dark);
         --heading-text-color: var(--heading-text-color-dark);
+        --highlight-color: var(var(--highlight-color-dark))
     }
 }
 /* Global Styles */
@@ -61,7 +63,7 @@ html{
     height: 100%;
 }
 body{
-    font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
@@ -72,7 +74,7 @@ body{
     min-height: 100vh;
 }
 h1, h2, h3, h4, h5, h6{
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Noto Sans SC", sans-serif;
     color: var(--text-color);
 }
 p{
@@ -127,7 +129,7 @@ p{
 }
 .nav-link:hover{
     color: var(--secondary-color);
-    background-color: rgba(222, 0, 0, 0.08);
+    background-color: var(--highlight-color-dark);
     transform: translateX(4px);
 }
 .nav-link:focus{
@@ -215,6 +217,9 @@ h1{
         font-size: 1rem;
         padding: 0.5rem;
     }
+    h1{
+        font-size: 1.2rem;
+    }
     .img-1-1, .img-4-3{
         width: 100%;
         height: auto;
@@ -236,7 +241,8 @@ h1{
 .club-card h2{
     margin-top: 0;
     font-size: clamp(1.5rem, 3vw, 2rem);
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color);
 }
 .club-card p{
     margin: 0.3rem 0;
@@ -262,4 +268,9 @@ h1{
 .img-4-3{
     width: 200px;
     height: 150px;
+}
+strong{
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 900;
+    color: var(--highlight-color);
 }
