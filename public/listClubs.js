@@ -1,7 +1,9 @@
-export async function populateClubs(jsonPath="clubs.json"){
+export async function listClubs(jsonPath="clubs.json"){
     try{
         let response=await fetch(jsonPath);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        if (!response.ok){
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         let clubs=await response.json();
         let results=await Promise.all(
             clubs.map(async club=>{
@@ -27,7 +29,7 @@ export async function populateClubs(jsonPath="clubs.json"){
                     basePath,
                     clubPath,
                     fullImagePath,
-                    images,
+                    images
                 };
             })
         );

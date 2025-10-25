@@ -205,10 +205,61 @@ h1{
     h1{
         font-size: 2rem;
     }
+    .img-1-1,.img-4-3{
+        width: 45%;
+        height: auto;
+    }
 }
 @media (max-width: 480px){
     .nav-link{
         font-size: 1rem;
         padding: 0.5rem;
     }
+    .img-1-1, .img-4-3{
+        width: 100%;
+        height: auto;
+    }
+}
+/* Club Cards */
+.club-card{
+    background-color: var(--background-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.club-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+.club-card h2{
+    margin-top: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--primary-color);
+}
+.club-card p{
+    margin: 0.3rem 0;
+}
+.club-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.club-images img{
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+.club-images img:hover{
+    transform: scale(1.05);
+}
+.img-1-1{
+    width: 150px;
+    height: 150px;
+}
+.img-4-3{
+    width: 200px;
+    height: 150px;
 }
