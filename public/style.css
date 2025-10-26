@@ -19,28 +19,29 @@
 }
 /* Root Variables */
 :root{
-    --primary-color: #012583;
+    --primary-color: #1A254B;
     --secondary-color: #3255A4;
-    --tertiary-color: #8D8D8D;
-    --background-color: #FFF;
-    --background-secondary: #CACACA;
-    --text-color: #000;
-    --heading-text-color: #FFF;
-    --highlight-color: #D91A4A;
-    --highlight-color-dark: #FFD700;
-    --light-gray: #FAFAFA;
-    --background-color-dark: #303030;
-    --background-secondary-dark: #2A2A2A;
-    --text-color-dark: #EAEAEA;
-    --primary-color-dark: #0337BD;
-    --light-gray-dark: #2A2A2A;
-    --heading-text-color-dark: #FFF;
+    --tertiary-color: #757575;
+    --background-color: #FDFBF7;
+    --background-secondary: #F2F1EC;
+    --text-color: #1C1C1C;
+    --heading-text-color: #1A254B;
+    --highlight-color: #8C1C13;
+    --highlight-color-dark: #B89C54;
+    --light-gray: #EDEBE6;
+    --background-color-dark: #181A1F;
+    --background-secondary-dark: #20242B;
+    --text-color-dark: #EAE8E3;
+    --primary-color-dark: #4B5D97;
+    --light-gray-dark: #2B2F38;
+    --heading-text-color-dark: #F6F6F6;
     --border-radius: 8px;
-    --sidebar-width: 280px;
-    --shadow-light: 0 2px 5px rgba(0, 0, 0, .1);
+    --sidebar-width: 200px;
+    --shadow-light: 0 2px 5px rgba(0, 0, 0, .08);
     --shadow-medium: 0 8px 24px rgba(0, 0, 0, .12);
     scrollbar-gutter: stable;
 }
+
 /* Dark Mode Variables */
 @media (prefers-color-scheme: dark){
     :root{
@@ -95,7 +96,7 @@ p{
     left: 0;
     bottom: 0;
     overflow-y: auto;
-    padding: 2rem 1rem;
+    padding: 1.25rem 0.75rem;
     transition: transform 0.3s ease;
     z-index: 1000;
 }
@@ -122,14 +123,14 @@ p{
     display: block;
     text-decoration: none;
     color: var(--text-color);
-    font-size: clamp(1rem, 1.5vw, 1.1rem);
-    padding: 0.75rem 1rem;
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    padding: 0.5rem 0.75rem;
     border-radius: var(--border-radius);
     transition: all 0.2s ease-in-out;
 }
 .nav-link:hover{
-    color: var(--secondary-color);
-    background-color: var(--highlight-color-dark);
+    color: var(--highlight-color);
+    background-color: rgba(199, 79, 79, 0.1);
     transform: translateX(4px);
 }
 .nav-link:focus{
@@ -170,17 +171,37 @@ p{
     transform: rotate(-45deg);
     top: 9px;
 }
+.sidebar a{
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.3;
+}
 /* Headings */
 h1{
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: "EB Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    color: var(--primary-color);
     text-align: center;
-    color: var(--heading-text-color);
-    background: var(--primary-color);
-    padding: 1rem;
-    margin: 0 0 1rem;
-    box-shadow: var(--shadow-light);
-    border-radius: var(--border-radius);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 8px rgba(0, 0, 0, 0.4);
+    margin: 2.5rem 0 2rem;
+    letter-spacing: 0.02em;
+    background: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    border-bottom: 2px solid var(--highlight-color);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+h2, h3{
+    font-family: "EB Garamond", serif;
+    color: var(--primary-color);
+}
+p, li{
+    font-family: "Noto Sans SC", sans-serif;
 }
 /* Footer */
 #footer{
@@ -232,17 +253,24 @@ h1{
     box-shadow: var(--shadow-medium);
     padding: 1.5rem;
     margin-bottom: 2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.club-card.visible{
+    opacity: 1;
+    transform: translateY(0);
+    animation: floatIn 0.8s ease-out both;
 }
 .club-card:hover{
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 .club-card h2{
-    margin-top: 0;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    color: var(--secondary-color);
-    text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color);
+    text-shadow: none;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--highlight-color);
+    padding-bottom: 0.25rem;
 }
 .club-card p{
     margin: 0.3rem 0;
@@ -271,6 +299,38 @@ h1{
 }
 strong{
     font-family: "Noto Sans SC", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--highlight-color);
+}
+/* Global Float-in */
+@keyframes floatIn{
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+main, #main > *, .club-card, h1, h2, h3, p, li, img, #footer *{
+    animation: floatIn 0.8s ease-out both;
+}
+h1, h2, h3{
+    animation-delay: 0.9s;
+}
+p, li{
+    animation-delay: 0.7s;
+}
+.nav-link{
+    animation-delay: 0.3s;
+}
+.club-card{
+    animation-delay: 1s;
+}
+.club-images img{
+    animation-delay: 0.5s;
+}
+footer, #footer{
+    animation-delay: 0.6s;
 }

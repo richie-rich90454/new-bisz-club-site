@@ -1,15 +1,15 @@
 import {listClubs} from "./listClubs.js";
 /**
- * Render club cards on the page for a given category.
- * @param{string} pageName - "academic", "arts", "cs", "sports"
- * @param{string} containerSelector - selector for main container, default ".main-section"
+*Render club cards on the page for a given category.
+*@param{string} pageName - "academic", "arts", "cs", "sports"
+*@param{string} containerSelector - selector for main container, default ".main-section"
  */
 export async function renderClubs(pageName="", containerSelector=".main-section"){
     let clubData=await listClubs();
     let mainSection=document.querySelector(containerSelector);
     if (!mainSection) return console.warn("Container not found:", containerSelector);
     let filteredClubs=clubData.filter(club=>club.clubID.split(".")[0]===pageName);
-    filteredClubs.forEach(club=>{
+    filteredClubs.forEach((club, i)=>{
         let div=document.createElement("div");
         div.className="club-card";
         let imagesContainer=document.createElement("div");
@@ -33,5 +33,6 @@ export async function renderClubs(pageName="", containerSelector=".main-section"
         `;
         div.appendChild(imagesContainer);
         mainSection.appendChild(div);
+        setTimeout(()=>div.classList.add("visible"), 100*i);
     });
 }
